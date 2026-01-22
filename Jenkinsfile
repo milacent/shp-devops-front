@@ -12,5 +12,16 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Build Production') {
+            steps {
+                sh 'npm run build_prod'
+            }
+        }
+    }
+    
+    post {
+        always {
+            archiveArtifacts artifacts: 'dist/**', allowEmptyArchive: true
+        }
     }
 }
