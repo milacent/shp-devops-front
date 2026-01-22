@@ -30,19 +30,8 @@ pipeline {
         }
         stage('Deploy to Production') {
             steps {
-                sh '''
-
-                    sudo mkdir -p $PROJECT_DIR
-                    
-                    sudo rm -rf $PROJECT_DIR/*
-                    
-                    sudo cp -r dist/* $PROJECT_DIR/
-                    
-                    sudo chown -R www-data:www-data $PROJECT_DIR
-                    sudo chmod -R 755 $PROJECT_DIR
-                    
-                    echo " Deployed to $PROJECT_DIR"
-                    ls -la $PROJECT_DIR
+                sh '''          
+                    cp -r dist/* ${PROJECT_DIR}/
                 '''
             }
         }
