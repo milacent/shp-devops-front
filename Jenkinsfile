@@ -33,7 +33,11 @@ pipeline {
                 sh '''
 		    mkdir -p ${PROJECT_DIR}        
                     cp -r dist/* ${PROJECT_DIR}/
+		    echo "===== CHECK DEPLOY DIR ====="
+                    ls -la /var/www
+                    ls -la ${PROJECT_DIR}
                 '''
+
             }
         }
     }
