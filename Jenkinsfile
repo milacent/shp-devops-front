@@ -30,7 +30,8 @@ pipeline {
         }
         stage('Deploy to Production') {
             steps {
-                sh '''          
+                sh '''
+		    mkdir -p ${PROJECT_DIR}        
                     cp -r dist/* ${PROJECT_DIR}/
                 '''
             }
