@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        PROJECT_DIR = '/var/www/shp-devops-front'
+        PROJECT_DIR = '/var/www/shp-devops-front/'
     }
     
     stages {
